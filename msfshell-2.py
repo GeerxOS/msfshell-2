@@ -134,7 +134,7 @@ def tool_2():
        
     if opc == "install":
     	os.system("clear")
-    	os.system("sudo add.sh")
+    	os.system("sudo install.sh")
     	exit()
 
     if opc == "update":
