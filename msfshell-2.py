@@ -138,9 +138,9 @@ def tool_2():
     	exit()
 
     if opc == "update":
-        os.system("Updating...")
+        print("Updating...")
         os.system("git pull")
-        os.system("Done!!")
+        print("Updated!...")
         exit()
     
     if opc == "use":
