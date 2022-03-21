@@ -262,6 +262,11 @@ def tool_2():
         print(ban)
         tool_2()
 
+    else:
+        red()
+        print("[MsfShell] Is Not A Command ")
+        tool_2()
+
 
 if __name__ == '__main__':
     try:
