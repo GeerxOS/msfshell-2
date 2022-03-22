@@ -1,6 +1,9 @@
 import os
 from sys import *
 
+#CREADO POR GEERXOS GITHUB: https://github.com/GeerxOS
+
+
 # Se importan los scripts
 
 from colors import red, green, blue, yellow, purple, white
