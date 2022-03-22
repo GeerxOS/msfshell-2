@@ -142,7 +142,7 @@ def tool_2():
 
     if opc == "update":
         print("Updating...")
-        os.system("git pull")
+        os.system("sudo git pull")
         print("Updated!...")
         exit()
     
