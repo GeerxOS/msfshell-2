@@ -1,12 +1,8 @@
 echo "You must run with root!"
-git clone https://github.com/GeerxOS/msfshell-2
 sudo apt install python3 
 sudo apt install gnome-terminal
-cd msfshell-2
-mkdir /usr/share/msfshell-2
-mv * /usr/share/msfshell-2
-mv .gitignore /usr/share/msfshell-2
-mv .git /usr/share/msfshell-2
+cd /usr/share
+git clone https://github.com/GeerxOS/msfshell-2
 cd /usr/bin
 echo '#!/bin/bash' >> msfshell-2
 echo ' ' >> msfshell-2
