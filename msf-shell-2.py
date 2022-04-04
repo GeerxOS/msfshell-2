@@ -103,8 +103,8 @@ ban="""
 | $$ \/  | $$ /$$$$$$$/| $$          |  $$$$$$/| $$  | $$|  $$$$$$$| $$| $$
 |__/     |__/|_______/ |__/           \______/ |__/  |__/ \_______/|__/|__/
 
-                                                                    GeerxOS
-                                                                           
+GeerxOS                                                              GeerxOS
+       GeerxOS                                                GeerxOS                                                                      
 """
 
 credits="""
@@ -236,6 +236,12 @@ exploits="""
 [0] Back
 
 """
+
+def back():
+    os.system("clear")
+    bannerp()
+    msfshell()
+
 # Script principal
 
 def bannerp():
@@ -259,23 +265,30 @@ def bannerp():
     print(" ")
 
 def msfshell():
-    os.system("clear")
-    bannerp()
 
     opc = input(Fore.GREEN + "MsfShell:~# ")
 
     if opc == "credits":
         os.system("clear")
         print(credits)
-        time.sleep(2)
+        input("--> ")
         msfshell()
 
     if opc == "exit":
         exit()
 
+    if opc == "clear":
+        back()
+
+    if opc == "ls":
+        os.system("ls")
+        msfshell()
+
+
     if opc == "help":
+        os.system("clear")
         print(help)
-        time.sleep(2)
+        input("--> ")
         msfshell()
 
     if opc == "1":
@@ -287,35 +300,33 @@ def msfshell():
 
         if win == "1":
             wind_tcp()
-            msfshell()
+            back()
 
         if win == "2":
             wind_http()
-            msfshell()
+            back()
         
         if win == "3":
             wind_py()
-            msfshell()
+            back()
 
         if win == "4":
             win_net_tcp()
-            msfshell()
+            back()
 
         if win == "5":
             win_net_udp()
-            msfshell()
+            back()
 
         if win == "6":
             win_net_http()
-            msfshell()
+            back()
 
         if win == "0":
-            os.system("clear")
-            msfshell()
+            back()
 
         else:
-            os.system("clear")
-            msfshell()
+            back()
 
     if opc == "2":
         os.system("clear")
@@ -326,35 +337,34 @@ def msfshell():
 
         if lin == "1":
             li86_tcp()
-            msfshell()
+            back()
 
         if lin == "1":
             li86_http()
-            msfshell()
+            back()
 
         if lin == "3":
             li64_tcp()
-            msfshell()
+            back()
 
         if lin == "4":
             li64_http()
-            msfshell()
+            back()
 
         if lin == "5":
             li_py()
-            msfshell()
+            back()
 
         if lin == "6":
             li_net_py()
-            msfshell()
+            back()
 
         if lin == "0":
             os.system("clear")
-            msfshell()
+            back()
 
         else:
-            os.system("clear")
-            msfshell()
+            back
 
     if opc == "3":
         os.system("clear")
@@ -365,27 +375,26 @@ def msfshell():
 
         if andr == "1":
             and_tcp()
-            msfshell()
+            back()
 
         if andr == "2":
             and_http()
-            msfshell()
+            back()
 
         if andr == "3":
             and_net_tcp()
-            msfshell()
+            back()
 
         if andr == "4":
             and_net_http()
-            msfshell()
+            back()
 
         if andr == "0":
             os.system("clear")
-            msfshell()
+            back()
 
         else:
-            os.system("clear")
-            msfshell()
+            back()
 
     if opc == "4":
         os.system("clear")
@@ -396,27 +405,25 @@ def msfshell():
 
         if ios == "1":
             ios64_http()
-            msfshell()
+            back()
 
         if ios == "2":
             ios64_tcp()
-            msfshell()
+            back()
 
         if ios == "3":
             armle_http()
-            msfshell()
+            back()
 
         if ios == "4":
             armle_tcp()
-            msfshell()
+            back()
 
         if ios == "0":
-            os.system("clear")
-            msfshell()
+            back()
 
         else:
-            os.system("clear")
-            msfshell()
+            back()
     
 
     if opc == "5":
@@ -428,19 +435,19 @@ def msfshell():
 
         if aux == "1":
             search_sdomains()
-            msfshell()
+            back()
 
         if aux == "2":
             search_email()
-            msfshell()
+            back()
 
         if aux == "0":
             os.system("clear")
-            msfshell()
+            back()
 
         else:
             os.system("clear")
-            msfshell()
+            back()
 
     if opc == "6":
         os.system("clear")
@@ -451,26 +458,23 @@ def msfshell():
 
         if exp == "1":
             win_vlc()
-            msfshell()
+            back()
 
         if exp == "2":
             adobe_exe()
-            msfshell()
+            back()
 
         if exp == "0":
-            os.system("clear")
-            msfshell()
+            back()
 
         else:
-            os.system("clear")
-            msfshell()
-
+            back()
 
     if opc == "0":
         exit()
 
     else:
-        print("[MsfShell] Is not a command!!")
+        print("[MsfShell] "+opc+" Is not a command!!")
         time.sleep(2)
         msfshell()
 
@@ -478,7 +482,7 @@ if __name__ == '__main__':
     try:
         os.system("clear")
         Fore.BLUE
-        msfshell()
+        back()
 
     except(KeyboardInterrupt):
         print("\nCTRL+C Detected!, force program to stop\n")
@@ -486,4 +490,4 @@ if __name__ == '__main__':
         os.system("rm -rf __pycache__")
         exit()
 
-msfshell()
+back()
