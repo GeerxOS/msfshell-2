@@ -260,7 +260,8 @@ def bannerp():
     print(" ")
     print(Fore.BLUE + "[5] Auxiliarys")
     print(Fore.BLUE + "[6] Exploits")
-    print()
+    print("")
+    print(Fore.BLUE + "[01] Extra")
     print(Fore.BLUE  + "[0] Exit")
     print(" ")
 
@@ -284,6 +285,12 @@ def msfshell():
         os.system("ls")
         msfshell()
 
+    if opc == "01":
+        os.system("clear")
+        os.chdir("extra")
+        os.system("python3 extra.py")
+        os.chdir("..")
+        back()
 
     if opc == "help":
         os.system("clear")
