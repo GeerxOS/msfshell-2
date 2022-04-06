@@ -314,3 +314,4 @@ try:
 
 except(KeyboardInterrupt):
     print(Fore.RED + "CTRL+C Exit!")
+    exit()
