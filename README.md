@@ -1,6 +1,6 @@
 # msfshell-2
 
-Version 2 of my tool this time creates a total of 16 payloads, with a few netcat functions
+Python script to quickly create payloads
 
 # Installation
 
