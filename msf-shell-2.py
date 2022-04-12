@@ -487,6 +487,10 @@ def msfshell():
 
 if __name__ == '__main__':
     try:
+        white()
+        print("Created by gerx")
+        print(" ")
+        if input("Do you want to continue? y/n -->") == "y":
         os.system("clear")
         Fore.BLUE
         back()
