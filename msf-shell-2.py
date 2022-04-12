@@ -487,13 +487,13 @@ def msfshell():
 
 if __name__ == '__main__':
     try:
-        white()
+        Fore.WHITE
         print("Created by gerx")
         print(" ")
-        if input("Do you want to continue? y/n -->") == "y":
-        os.system("clear")
-        Fore.BLUE
-        back()
+        if input(Fore.RED + "Do you want to continue? y/n --> ") == "y":
+            os.system("clear")
+            Fore.BLUE
+            back()
 
     except(KeyboardInterrupt):
         print("\nCTRL+C Detected!, force program to stop\n")
