@@ -110,7 +110,7 @@ GeerxOS                                                              GeerxOS
 credits="""
 
 +-----------------------+
-|Created BY     GeerxOS |
+|Created By GeerxOS     |  
 |=======================|
 |Telegram: t.me/geraaxd |
 |=======================|
