@@ -8,6 +8,8 @@ git clone https://github.com/GeerxOS/msfshell-2
 
 cd msfshell-2
 
+pip install colorama 
+
 You can run the tool or you can run sudo bash install.sh
 
 sudo bash install.sh
