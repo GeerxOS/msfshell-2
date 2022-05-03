@@ -19,6 +19,12 @@ from auxiliarys.search_gmails import search_email
 
 # Meterpreter
 
+# MacOS Meterpreter
+
+from meterpreter.mac.osx64tcp import osx64tcp
+from meterpreter.mac.osx64_http import osx64http
+from netcat.mac.osx86_net import osx86_net
+
 #iOS Meterpreter
 
 from ios.aarch64_http import ios64_http
@@ -62,6 +68,8 @@ from netcat.windows.win_net_tcp import win_net_tcp
 from netcat.windows.win_net_udp import win_net_udp
 
 # Banners
+
+from core.banners import *
 help="""
 
 
@@ -116,9 +124,9 @@ credits="""
 |=======================|
 |Discord: Geerx#5380    |
 |=======================|
-|TikTok: whois_.gerx    |
+|TikTok: imnotgeerx     |
 |=======================|
-|Instagram: whois_.gerx |
+|Instagram: geerx_os    |
 |=======================|
 |YouTube: Geras !       |
 +=======================+
@@ -206,6 +214,22 @@ iospayloads="""
 [0] Back
 
 """
+macospayloads="""
+
++-------------------------------------------------+
+|              MacOSx Payloads                    |  
+|                                                 |
+| [1] osx/x64/meterpreter_reverse_http            | 
+|                                                 | 
+| [2] osx/x64/meterpreter_reverse_tcp             |
+|                                                 |
+| [3] osx/x86/shell_reverse_tcp                   |
+|                                                 |
++-------------------------------------------------+
+
+[0] Back
+
+"""
 
 auxiliarys="""
 
@@ -255,11 +279,12 @@ def bannerp():
     print(Fore.BLUE + "[2] Linux")
     print(Fore.BLUE + "[3] Android")
     print(Fore.BLUE + "[4] Apple iOS")
+    print(Fore.BLUE + "[5] MacOS")
     print(" ")
     print(Fore.WHITE + "=== !Extra modules! ===")
     print(" ")
-    print(Fore.BLUE + "[5] Auxiliarys")
-    print(Fore.BLUE + "[6] Exploits")
+    print(Fore.BLUE + "[6] Auxiliarys")
+    print(Fore.BLUE + "[7] Exploits")
     print("")
     print(Fore.BLUE + "[01] Extra")
     print(Fore.BLUE  + "[0] Exit")
@@ -285,6 +310,11 @@ def msfshell():
         os.system("ls")
         msfshell()
 
+    if opc == "02":
+        os.system("clear")
+        osx64tcp()
+        back()
+        
     if opc == "01":
         os.system("clear")
         os.chdir("extra")
@@ -300,7 +330,7 @@ def msfshell():
 
     if opc == "1":
         os.system("clear")
-        os.system("figlet -f banner Windows")
+        windows()
         print(Fore.BLUE + (winpayloads))
 
         win = input(Fore.BLUE + "MsfShell:~/Windows# ")
@@ -337,7 +367,7 @@ def msfshell():
 
     if opc == "2":
         os.system("clear")
-        os.system("figlet -f banner Linux")
+        linux()
         print(Fore.BLUE + (linpayloads))
 
         lin = input(Fore.BLUE + "MsfShell:~/Linux# ")
@@ -375,7 +405,7 @@ def msfshell():
 
     if opc == "3":
         os.system("clear")
-        os.system("figlet -f banner Android")
+        android()
         print(Fore.BLUE + (andpayloads))
 
         andr = input(Fore.BLUE + "MsfShell:~/Linux# ")
@@ -405,7 +435,7 @@ def msfshell():
 
     if opc == "4":
         os.system("clear")
-        os.system("figlet -f banner iOS ")
+        macos()
         print(Fore.BLUE + (iospayloads))
 
         ios = input(Fore.BLUE + "MsfShell:~/iOS ")
@@ -432,10 +462,36 @@ def msfshell():
         else:
             back()
     
-
     if opc == "5":
         os.system("clear")
-        os.system("figlet -f banner Auxiliarys")
+        macos()
+        print(Fore.BLUE + (macospayloads))
+
+        macs = input(Fore.BLUE + "MsfShell:~/MacOSx# ")
+
+        if macs == "1":
+            osx64http()
+            back()
+        
+        if macs == "2":
+            osx64tcp()
+            back()
+        
+        if macs == "3":
+            osx86_net()
+            back()
+
+        if macs == "0":
+            os.system("clear")
+            back()
+
+        else:
+            os.system("clear")
+            back()
+
+    if opc == "6":
+        os.system("clear")
+        auxiliary()
         print(Fore.BLUE + (auxiliarys))
 
         aux = input(Fore.BLUE + "MsfShell:~/Auxiliarys# ")
@@ -456,9 +512,9 @@ def msfshell():
             os.system("clear")
             back()
 
-    if opc == "6":
+    if opc == "7":
         os.system("clear")
-        os.system("figlet -f banner Exploits")
+        exploitb()
         print(Fore.BLUE + (exploits))
 
         exp = input(Fore.BLUE + "MsfShell:~/Exploits# ")
@@ -482,7 +538,6 @@ def msfshell():
 
     else:
         print("[MsfShell] "+opc+" Is not a command!!")
-        time.sleep(2)
         msfshell()
 
 if __name__ == '__main__':

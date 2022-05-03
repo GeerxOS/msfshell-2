@@ -1,6 +1,7 @@
 echo "You must run with root!"
 sudo apt install python3 
 sudo apt install gnome-terminal
+pip install colorama
 cd /usr/share
 git clone https://github.com/GeerxOS/msfshell-2
 cd /usr/bin
