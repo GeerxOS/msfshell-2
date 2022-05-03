@@ -10,6 +10,8 @@ cd msfshell-2
 
 pip install colorama 
 
+For the script to work properly you must have metasploit-framework installed
+
 You can run the tool or you can run sudo bash install.sh
 
 sudo bash install.sh
